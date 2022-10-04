@@ -47,13 +47,15 @@
                 const { latitude, longitude } = data;
 
                 marker.setLatLng([latitude, longitude]);
-                marker.setView([latitude,longitude]);
+                marker.setView([latitude, longitude]);
 
                 document.getElementById('lat').textContent = latitude.toFixed(2);
                 document.getElementById('lon').textContent = longitude.toFixed(2);
             }
 
             getISS();
+
+            setInterval(getISS, 1500);
 
         </script>
     </body>
