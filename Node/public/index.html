@@ -51,7 +51,20 @@
                     document.getElementById('lat').textContent = lat;
                     document.getElementById('lon').textContent = lon;
                     //console.log(position);
+
+                    const data = { lat, lon };
+                    const options = {
+                        method: 'POST',
+                        Headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
                     
+                    };
+                    fetch("/api", options).then(response => {
+                        console.log(response);
+                    });
+
                 });
             }else{
                 console.log('geolocation not available');
